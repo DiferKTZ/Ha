@@ -49,9 +49,16 @@ if(isset($_POST['sub'])){
 
                             while($item = mysqli_fetch_assoc($sqlCity)){
                                 $nomeItem = utf8_encode($item['nameCity']);
+
+                                if($f['city'] == $nomeItem){
                                 echo "
-                                    <option value=$nomeItem>$nomeItem</option>
-                                ";
+                                    <option value=$nomeItem selected='selected'>$nomeItem</option>
+                                ";    
+                                }
+                                else{
+                                    echo "<option value=$nomeItem>$nomeItem</option>";
+                                }
+                                
                             }
                             ?>
                     </td>
